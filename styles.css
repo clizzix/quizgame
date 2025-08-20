@@ -30,11 +30,12 @@ h1 {
     color: #001f3f;
 }
 
-#quiz h2 {
+#question {
     font-size: 20px;
     font-weight: 600;
     color: #001f3f;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .btn {
@@ -68,6 +69,7 @@ h1 {
     padding: 10px;
     margin: 20px auto 0;
     border-radius: 5px;
+    text-align: center;;
     display: none;
     cursor: pointer;
 }
