@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #001f3f;
+    background-image: linear-gradient(to bottom, #6ed280, #809437);
     color: #fff;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@ h1 {
     color: #001f3f;
     font-weight: 500;
     width: 100%;
-    border: 1px solid #001f3f;
+    border: 1px solid #050506;
     padding: 10px;
     border-radius: 5px;
     margin: 10px 0;
@@ -80,4 +80,78 @@ h1 {
 .btn.incorrect {
     background: #f44336;
     color: #fff;
+}
+#score-container {
+    text-align: center;
+    color: #001f3f;
+}
+
+#score-container h3 {
+    margin-bottom: 10px;
+}
+#highscore-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+#highscore-table th, #highscore-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+#highscore-table th {
+    background-color: #001f3f;
+    color: #fff;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    color: #001f3f;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background: #008cba;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background: #0076a0;
 }

@@ -38,12 +38,22 @@ const questions = [
 const questionElement = document.getElementById('question');
 const answerButtons = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-button');
+const quizElement = document.getElementById('quiz');
+const scoreContainer = document.getElementById('score-container');
+const finalScoreElement = document.getElementById('final-score');
+const highscoreBody = document.getElementById('highscore-body');
+const nameModal = document.getElementById('name-modal');
+const nameInput = document.getElementById('name-input');
+const saveNameBtn = document.getElementById('save-name-btn');
 
 let currentQuestionIndex = 0;
 let score = 0; 
 
 // Starts the quiz by resetting the score and showing the first question
 function startQuiz() {
+    quizElement.style.display = "block";
+    scoreContainer.style.display = "none";
+    nameModal.style.display = "none";
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
@@ -99,9 +109,16 @@ function selectAnswer(e) {
 // Show the end results 
 function showScore() {
     resetState();
+    quizElement.style.display = "none";
+    scoreContainer.style.display = "block";
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again";
-    nextButton.style.display = "block";
+
+    nameModal.style.display = "block";
+
+    saveHighscore(score);
+    displayHighscores();
+    nextButton.style.opacity = "1";
 }
 
 // Handles the next button click 
@@ -122,5 +139,54 @@ nextButton.addEventListener("click", () => {
         startQuiz();
     }
 });
+// saves the highscores to local storage
+function saveHighscore(newScore) {
+    let highscores = JSON.parse(localStorage.getItem('highscores')) || [];
+
+    const playerName = prompt("Enter your name:");
+    if (playerName) {
+        const highscoreEntry = { name: playerName, score: newScore };
+        highscores.push(highscoreEntry);
+        highscores.sort((a, b) => b.score - a.score);
+        highscores = highscores.slice(0, 10); // Keep only top 10 scores
+
+        localStorage.setItem('highscores', JSON.stringify(highscores));
+    }
+}
+// Displays the highscores in the highscore table
+function displayHighscores() {
+    let highscores = JSON.parse(localStorage.getItem('highscores')) || [];
+    highscoreBody.innerHTML = ""; // Clear previous highscores
+
+    highscores.forEach((entry, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${entry.name}</td>
+            <td>${entry.score}</td>
+        `;
+        highscoreBody.appendChild(row);
+    });
+}
+// Function to save the player's name and score
+function saveAndDisplayHighscore() {
+    const playerName = nameInput.value || "Anonym";
+    let highscores = JSON.parse(localStorage.getItem('highscores')) || [];
+    
+    const highscoreEntry = { name: playerName, score: score };
+    highscores.push(highscoreEntry);
+    
+    highscores.sort((a, b) => b.score - a.score);
+    highscores = highscores.slice(0, 10);
+    
+    localStorage.setItem('highscores', JSON.stringify(highscores));
+    
+    nameModal.style.display = "none"; 
+    displayHighscores();
+    nameInput.value = ""; 
+}
+// Event listener for saving the player's name
+saveNameBtn.addEventListener("click", saveAndDisplayHighscore);
+
  // Start the quiz when the page loads
  startQuiz();
