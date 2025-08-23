@@ -7,30 +7,183 @@
 
 const questions = [
     {
-        question: "What is the capital of France?",
+        question: "Was ist der Hauptzweck eines REST-APIs?",
         answers: [
-            { text: "Berlin", correct: false },
-            { text: "Madrid", correct: false },
-            { text: "Paris", correct: true },
-            { text: "Rome", correct: false }
+            { text: "Zum Definieren der Benutzeroberfläche", correct: false },
+            { text: "Zum Speichern von Daten auf dem Client", correct: false },
+            { text: "Zum Kommunizieren zwischen Server und Client", correct: true },
+            { text: "Zum Kompilieren von JavaScript-Code", correct: false },
         ]
     },
     {
-        question: "What is 2 + 2?",
+        question: "Welches Frontend-Framework nutzt virtuelle DOMs zur Leistungssteigerung?",
         answers: [
-            { text: "3", correct: false },
-            { text: "4", correct: true },
-            { text: "5", correct: false },
-            { text: "6", correct: false }
+            { text: "Angular", correct: false },
+            { text: "Vue.js", correct: false },
+            { text: "React", correct: true },
+            { text: "jQuery", correct: false },
         ]
     },
     {
-        question: "What is the largest planet in our solar system?",
+        question: "Was ist ein 'Callback Hell' in Node.js?",
         answers: [
-            { text: "Earth", correct: false },
-            { text: "Jupiter", correct: true },
-            { text: "Mars", correct: false },
-            { text: "Saturn", correct: false }
+            { text: "Ein Fehler, der durch falsche Syntax verursacht wird", correct: false },
+            { text: "Eine Form der Datenspeicherung", correct: false },
+            { text: "Eine verschachtelte Struktur von Callback-Funktionen", correct: true },
+            { text: "Ein Problem bei der Serverkonfiguration", correct: false },
+        ]
+    },
+    {
+        question: "Welche der folgenden Datenbanken ist eine relationale Datenbank?",
+        answers: [
+            { text: "MongoDB", correct: false },
+            { text: "Redis", correct: false },
+            { text: "PostgreSQL", correct: true },
+            { text: "Cassandra", correct: false },
+        ]
+    },
+    {
+        question: "Was ist ein 'npm' im Kontext von Node.js?",
+        answers: [
+            { text: "Ein Webserver", correct: false },
+            { text: "Ein Paketmanager für JavaScript", correct: true },
+            { text: "Ein JavaScript-Compiler", correct: false },
+            { text: "Ein Debugging-Tool", correct: false },
+        ]
+    },
+    {
+        question: "Welches Protokoll wird standardmäßig für die sichere Datenübertragung im Web verwendet?",
+        answers: [
+            { text: "HTTP", correct: false },
+            { text: "FTP", correct: false },
+            { text: "SMTP", correct: false },
+            { text: "HTTPS", correct: true },
+        ]
+    },
+    {
+        question: "Was ist der Hauptvorteil von Single-Page Applications (SPAs)?",
+        answers: [
+            { text: "Schnellere anfängliche Ladezeiten", correct: false },
+            { text: "Bessere SEO-Performance", correct: false },
+            { text: "Reibungslosere Benutzererfahrung nach dem ersten Laden", correct: true },
+            { text: "Sie erfordern keinen Webserver", correct: false },
+        ]
+    },
+    {
+        question: "Was ist eine 'Migration' in einer Datenbank?",
+        answers: [
+            { text: "Das Sichern von Daten", correct: false },
+            { text: "Das Ändern des Datenbankschemas", correct: true },
+            { text: "Das Löschen von Daten", correct: false },
+            { text: "Das Importieren von Daten", correct: false },
+        ]
+    },
+    {
+        question: "Welcher Statuscode signalisiert eine erfolgreiche HTTP-Anfrage?",
+        answers: [
+            { text: "404 Not Found", correct: false },
+            { text: "500 Internal Server Error", correct: false },
+            { text: "200 OK", correct: true },
+            { text: "301 Moved Permanently", correct: false },
+        ]
+    },
+    {
+        question: "Was ist 'Middleware' in Express.js?",
+        answers: [
+            { text: "Eine Datenbank-Schnittstelle", correct: false },
+            { text: "Eine Funktion, die Anfragen verarbeitet, bevor sie zur Route gelangen", correct: true },
+            { text: "Ein Frontend-Framework", correct: false },
+            { text: "Ein Code-Compiler", correct: false },
+        ]
+    },
+    {
+        question: "Was ist ein 'Promise' in JavaScript?",
+        answers: [
+            { text: "Eine Funktion, die sofort ausgeführt wird", correct: false },
+            { text: "Ein Objekt für die Verwaltung asynchroner Operationen", correct: true },
+            { text: "Ein Datentyp wie String oder Number", correct: false },
+            { text: "Eine Art von Schleife", correct: false },
+        ]
+    },
+    {
+        question: "Was ist ein 'Cross-Site Scripting (XSS)' Angriff?",
+        answers: [
+            { text: "Ein Angriff, bei dem die Datenbank gestohlen wird", correct: false },
+            { text: "Ein Angriff, bei dem bösartiger Code in die Website injiziert wird", correct: true },
+            { text: "Ein Denial-of-Service-Angriff", correct: false },
+            { text: "Ein Angriff auf die Server-Hardware", correct: false },
+        ]
+    },
+    {
+        question: "Was ist der Zweck von `package.json`?",
+        answers: [
+            { text: "Zum Speichern von Benutzerdaten", correct: false },
+            { text: "Zum Definieren von Projekt-Metadaten und Abhängigkeiten", correct: true },
+            { text: "Zum Konfigurieren des Webservers", correct: false },
+            { text: "Zum Schreiben von CSS-Styles", correct: false },
+        ]
+    },
+    {
+        question: "Was ist 'Docker'?",
+        answers: [
+            { text: "Ein JavaScript-Framework", correct: false },
+            { text: "Ein Tool zur Containerisierung von Anwendungen", correct: true },
+            { text: "Ein Webserver", correct: false },
+            { text: "Ein Versionskontrollsystem", correct: false },
+        ]
+    },
+    {
+        question: "Welche Methode wird in REST-APIs verwendet, um eine Ressource zu aktualisieren?",
+        answers: [
+            { text: "GET", correct: false },
+            { text: "POST", correct: false },
+            { text: "DELETE", correct: false },
+            { text: "PUT / PATCH", correct: true },
+        ]
+    },
+    {
+        question: "Was ist 'Agile Softwareentwicklung'?",
+        answers: [
+            { text: "Ein linearer Prozess mit starren Phasen", correct: false },
+            { text: "Ein Ansatz, der auf iterativen Zyklen und Flexibilität basiert", correct: true },
+            { text: "Ein System für die Verwaltung von Datenbanken", correct: false },
+            { text: "Eine Methode zur Code-Optimierung", correct: false },
+        ]
+    },
+    {
+        question: "Welche Sprache wird hauptsächlich für das Styling von Webseiten verwendet?",
+        answers: [
+            { text: "JavaScript", correct: false },
+            { text: "Python", correct: false },
+            { text: "HTML", correct: false },
+            { text: "CSS", correct: true },
+        ]
+    },
+    {
+        question: "Was ist 'SEO'?",
+        answers: [
+            { text: "Secure Encryption Option", correct: false },
+            { text: "Server-side Optimization", correct: false },
+            { text: "Search Engine Optimization", correct: true },
+            { text: "Software Engineering Operations", correct: false },
+        ]
+    },
+    {
+        question: "Was ist die Hauptfunktion einer 'Git-Branch'?",
+        answers: [
+            { text: "Zum Löschen von Dateien", correct: false },
+            { text: "Zum Erstellen einer isolierten Entwicklungslinie", correct: true },
+            { text: "Zum Hochladen von Code auf einen Server", correct: false },
+            { text: "Zum Ausführen von Tests", correct: false },
+        ]
+    },
+    {
+        question: "Was ist ein 'ORM' im Backend?",
+        answers: [
+            { text: "Online Resource Manager", correct: false },
+            { text: "Object-Relational Mapping", correct: true },
+            { text: "Output Rendering Module", correct: false },
+            { text: "Operational Runtime Monitor", correct: false },
         ]
     }
 ];
@@ -51,6 +204,7 @@ let score = 0;
 
 // Starts the quiz by resetting the score and showing the first question
 function startQuiz() {
+    shuffleArray(questions);
     quizElement.style.display = "block";
     scoreContainer.style.display = "none";
     nameModal.style.display = "none";
@@ -60,6 +214,13 @@ function startQuiz() {
     showQuestion();
 }
 
+// Shuffles the questions in the beginning
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 // Displays the current question and its answers
 function showQuestion() {
     resetState();
